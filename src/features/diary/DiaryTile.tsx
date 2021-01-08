@@ -2,11 +2,7 @@ import React, { FC, useState } from 'react';
 import { Diary } from '../../interfaces/diary.interface';
 import http from '../../services/api';
 import { updateDiary } from './diariesSlice';
-import {
-  setCanEdit,
-  setActiveDiaryId,
-  setCurrentlyEditing,
-} from '../entry/editorSlice';
+import { setCanEdit, setActiveDiaryId, setCurrentlyEditing } from '../entry/editorSlice';
 import { showAlert } from '../../util';
 import { Link } from 'react-router-dom';
 import { useAppDispatch } from '../../store';
@@ -24,7 +20,6 @@ const DiaryTile: FC<Props> = (props) => {
   const [diary, setDiary] = useState(props.diary);
   const [isEditing, setIsEditing] = useState(false);
   const dispatch = useAppDispatch();
-
   const totalEntries = props.diary?.entryIds?.length;
 
   const saveChanges = () => {
@@ -71,7 +66,6 @@ const DiaryTile: FC<Props> = (props) => {
         )}
       </h2>
       <p className="subtitle">{totalEntries ?? '0'} saved entries</p>
-
       <div style={{ display: 'flex' }}>
         <button
           style={buttonStyle}
@@ -85,7 +79,7 @@ const DiaryTile: FC<Props> = (props) => {
         </button>
         <Link to={`diary/${diary.id}`} style={{ width: '100%' }}>
           <button className="secondary" style={buttonStyle}>
-            View all &rarr;
+            View all →
           </button>
         </Link>
       </div>

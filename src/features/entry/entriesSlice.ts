@@ -19,5 +19,4 @@ const entries = createSlice({
 });
 
 export const { setEntries, updateEntry } = entries.actions;
-
 export default entries.reducer;

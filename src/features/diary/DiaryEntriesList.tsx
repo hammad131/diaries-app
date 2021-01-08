@@ -12,7 +12,7 @@ import { useAppDispatch } from '../../store';
 const DiaryEntriesList: FC = () => {
   const { entries } = useSelector((state: RootState) => state);
   const dispatch = useAppDispatch();
-  const { id } = useParams();
+  const {id}:any=useParams();
 
   useEffect(() => {
     if (id != null) {
@@ -33,7 +33,7 @@ const DiaryEntriesList: FC = () => {
     <div className="entries">
       <header>
         <Link to="/">
-          <h3>&larr; Go Back</h3>
+          <h3>← Go Back</h3>
         </Link>
       </header>
       <ul>
